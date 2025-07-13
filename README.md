@@ -13,3 +13,4 @@
 | 03  | [Day 3: Perfectly Spherical Houses in a Vacuum](https://adventofcode.com/2015/day/3) | [🔗 Code](./src/main/java/com/arshshaikh/aoc/y2015/D03.java) |
 | 04  | [Day 4: The Ideal Stocking Stuffer](https://adventofcode.com/2015/day/4)             | [🔗 Code](./src/main/java/com/arshshaikh/aoc/y2015/D04.java) |
 | 05  | [Day 5: Doesn't He Have Intern-Elves For This?](https://adventofcode.com/2015/day/5) | [🔗 Code](./src/main/java/com/arshshaikh/aoc/y2015/D05.java) |
+| 06  | [Day 6: Probably a Fire Hazard](https://adventofcode.com/2015/day/6)                 | [🔗 Code](./src/main/java/com/arshshaikh/aoc/y2015/D06.java) |
