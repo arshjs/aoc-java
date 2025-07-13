@@ -19,6 +19,7 @@ public class D04Test {
 
     @Test
     void testSolutionPartTwo() {
+        // Puzzle 2
         Assertions.assertEquals(1038736, D04.solutionPartTwo(FileUtils.readFileAsString("y2015/D04.txt")));
     }
 
