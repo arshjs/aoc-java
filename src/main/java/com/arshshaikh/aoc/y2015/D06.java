@@ -4,31 +4,36 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
 import java.util.function.IntUnaryOperator;
-import java.util.regex.MatchResult;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class D06 {
     static int solutionPartOne(List<String> instructions) {
         boolean[][] lights = new boolean[1000][1000];
 
-        final Pattern pattern = Pattern.compile("\\d{1,3}");
+        final Pattern pattern = Pattern.compile("(turn on|turn off|toggle) (\\d{1,3}),(\\d{1,3}) through (\\d{1,3}),(\\d{1,3})");
 
         instructions.forEach(instruction -> {
-            int[] coordinates = pattern.matcher(instruction).results().map(MatchResult::group).mapToInt(Integer::parseInt).toArray();
+            Matcher matcher = pattern.matcher(instruction);
 
-            Function<Boolean, Boolean> operator;
-            if (instruction.startsWith("turn on")) {
-                operator = _ -> true;
-            } else if (instruction.startsWith("turn off")) {
-                operator = _ -> false;
-            } else if (instruction.startsWith("toggle")) {
-                operator = b -> !b;
-            } else {
-                throw new IllegalArgumentException("No such action defined.");
+            if (!matcher.find()) {
+                return;
             }
 
-            for (int i = coordinates[0]; i <= coordinates[2]; i++) {
-                for (int j = coordinates[1]; j <= coordinates[3]; j++) {
+            Function<Boolean, Boolean> operator = switch (matcher.group(1)) {
+                case "turn on" -> _ -> true;
+                case "turn off" -> _ -> false;
+                case "toggle" -> b -> !b;
+                default -> throw new IllegalStateException("No such action defined: " + matcher.group(1));
+            };
+
+            int x1 = Integer.parseInt(matcher.group(2));
+            int y1 = Integer.parseInt(matcher.group(3));
+            int x2 = Integer.parseInt(matcher.group(4)) + 1;
+            int y2 = Integer.parseInt(matcher.group(5)) + 1;
+
+            for (int i = x1; i < x2; i++) {
+                for (int j = y1; j < y2; j++) {
                     lights[i][j] = operator.apply(lights[i][j]);
                 }
             }
@@ -47,24 +52,29 @@ public class D06 {
     static int solutionPartTwo(List<String> instructions) {
         int[][] lights = new int[1000][1000];
 
-        final Pattern pattern = Pattern.compile("\\d{1,3}");
+        final Pattern pattern = Pattern.compile("(turn on|turn off|toggle) (\\d{1,3}),(\\d{1,3}) through (\\d{1,3}),(\\d{1,3})");
 
         instructions.forEach(instruction -> {
-            int[] coordinates = pattern.matcher(instruction).results().map(MatchResult::group).mapToInt(Integer::parseInt).toArray();
+            Matcher matcher = pattern.matcher(instruction);
 
-            IntUnaryOperator operator;
-            if (instruction.startsWith("turn on")) {
-                operator = i -> i + 1;
-            } else if (instruction.startsWith("turn off")) {
-                operator = i -> Math.max(i - 1, 0);
-            } else if (instruction.startsWith("toggle")) {
-                operator = i -> i + 2;
-            } else {
-                throw new IllegalArgumentException("No such action defined.");
+            if (!matcher.find()) {
+                return;
             }
 
-            for (int i = coordinates[0]; i <= coordinates[2]; i++) {
-                for (int j = coordinates[1]; j <= coordinates[3]; j++) {
+            IntUnaryOperator operator = switch (matcher.group(1)) {
+                case "turn on" -> i -> i + 1;
+                case "turn off" -> i -> Math.max(i - 1, 0);
+                case "toggle" -> i -> i + 2;
+                default -> throw new IllegalStateException("No such action defined: " + matcher.group(1));
+            };
+
+            int x1 = Integer.parseInt(matcher.group(2));
+            int y1 = Integer.parseInt(matcher.group(3));
+            int x2 = Integer.parseInt(matcher.group(4)) + 1;
+            int y2 = Integer.parseInt(matcher.group(5)) + 1;
+
+            for (int i = x1; i < x2; i++) {
+                for (int j = y1; j < y2; j++) {
                     lights[i][j] = operator.applyAsInt(lights[i][j]);
                 }
             }
