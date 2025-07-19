@@ -15,3 +15,4 @@
 | 05  | [Day 5: Doesn't He Have Intern-Elves For This?](https://adventofcode.com/2015/day/5) | [🔗 Code](./src/main/java/com/arshshaikh/aoc/y2015/D05.java) |
 | 06  | [Day 6: Probably a Fire Hazard](https://adventofcode.com/2015/day/6)                 | [🔗 Code](./src/main/java/com/arshshaikh/aoc/y2015/D06.java) |
 | 07  | [Day 7: Some Assembly Required](https://adventofcode.com/2015/day/7)                 | [🔗 Code](./src/main/java/com/arshshaikh/aoc/y2015/D07.java) |
+| 08  | [Day 8: Matchsticks](https://adventofcode.com/2015/day/8)                            | [🔗 Code](./src/main/java/com/arshshaikh/aoc/y2015/D08.java) |
