@@ -18,3 +18,4 @@
 | 08  | [Day 8: Matchsticks](https://adventofcode.com/2015/day/8)                            | [🔗 Code](./src/main/java/com/arshshaikh/aoc/y2015/D08.java) |
 | 09  | [Day 9: All in a Single Night](https://adventofcode.com/2015/day/9)                  | [🔗 Code](./src/main/java/com/arshshaikh/aoc/y2015/D09.java) |
 | 10  | [Day 10: Elves Look, Elves Say](https://adventofcode.com/2015/day/10)                | [🔗 Code](./src/main/java/com/arshshaikh/aoc/y2015/D10.java) |
+| 11  | [Day 11: Corporate Policy](https://adventofcode.com/2015/day/11)                     | [🔗 Code](./src/main/java/com/arshshaikh/aoc/y2015/D11.java) |
