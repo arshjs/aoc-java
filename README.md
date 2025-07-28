@@ -20,4 +20,7 @@
 | 10  | [Day 10: Elves Look, Elves Say](https://adventofcode.com/2015/day/10)                | [🔗 Code](./src/main/java/com/arshshaikh/aoc/y2015/D10.java) |
 | 11  | [Day 11: Corporate Policy](https://adventofcode.com/2015/day/11)                     | [🔗 Code](./src/main/java/com/arshshaikh/aoc/y2015/D11.java) |
 | 12  | [Day 12: JSAbacusFramework.io](https://adventofcode.com/2015/day/12)                 | [🔗 Code](./src/main/java/com/arshshaikh/aoc/y2015/D12.java) |
+| 13  |                                                                                      |                                                              |
 | 14  | [Day 14: Reindeer Olympics](https://adventofcode.com/2015/day/14)                    | [🔗 Code](./src/main/java/com/arshshaikh/aoc/y2015/D14.java) |
+| 15  |                                                                                      |                                                              |
+| 16  | [Day 16: Aunt Sue](https://adventofcode.com/2015/day/16)                             | [🔗 Code](./src/main/java/com/arshshaikh/aoc/y2015/D16.java) |
