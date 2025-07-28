@@ -5,7 +5,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class D14 {
-    static int solutionPartOne(List<String> details, int distance) {
+    static int solutionPartOne(List<String> details, int time) {
         final Pattern pattern = Pattern.compile("\\w+ can fly (\\d+) km/s for (\\d+) seconds, but then must rest for (\\d+) seconds.");
 
         List<Reindeer> reindeer = details.stream()
@@ -15,12 +15,12 @@ public class D14 {
                 .toList();
 
         return reindeer.stream()
-                .map(r -> (distance / r.cycleDuration() * r.flightDuration() + Math.min(distance % r.cycleDuration(), r.flightDuration)) * r.flightSpeed())
+                .map(r -> (time / r.cycleDuration() * r.flightDuration() + Math.min(time % r.cycleDuration(), r.flightDuration)) * r.flightSpeed())
                 .max(Integer::compareTo)
                 .orElse(0);
     }
 
-    static int solutionPartTwo(List<String> details, int distance) {
+    static int solutionPartTwo(List<String> details, int time) {
         final Pattern pattern = Pattern.compile("\\w+ can fly (\\d+) km/s for (\\d+) seconds, but then must rest for (\\d+) seconds.");
 
         List<ReindeerStats> reindeer = details.stream()
@@ -30,7 +30,7 @@ public class D14 {
                 .toList();
 
         int maxDistance = Integer.MIN_VALUE;
-        for (int i = 1; i <= distance; i++) {
+        for (int i = 1; i <= time; i++) {
             for (ReindeerStats rs : reindeer) {
                 if (i <= rs.getCycleDuration() * rs.getCycle() + rs.getFlightDuration()) {
                     rs.incrementDistance();

@@ -13,14 +13,14 @@ public class D14Test {
 
     @ParameterizedTest
     @MethodSource("casesPartOne")
-    void testSolutionPartOne(List<String> inputDetails, int inputDistance, int expected) {
-        Assertions.assertEquals(expected, D14.solutionPartOne(inputDetails, inputDistance));
+    void testSolutionPartOne(List<String> inputDetails, int inputTime, int expected) {
+        Assertions.assertEquals(expected, D14.solutionPartOne(inputDetails, inputTime));
     }
 
     @ParameterizedTest
     @MethodSource("casesPartTwo")
-    void testSolutionPartTwo(List<String> inputDetails, int inputDistance, int expected) {
-        Assertions.assertEquals(expected, D14.solutionPartTwo(inputDetails, inputDistance));
+    void testSolutionPartTwo(List<String> inputDetails, int inputTime, int expected) {
+        Assertions.assertEquals(expected, D14.solutionPartTwo(inputDetails, inputTime));
     }
 
     private static Stream<Arguments> casesPartOne() {
